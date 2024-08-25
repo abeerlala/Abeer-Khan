@@ -1,0 +1,489 @@
+/* Google Fonts (Raleway) */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary: #ffffff;
+    --secondary: royalblue;
+    --text: #323234;
+}
+
+/* Universal Heading Styling */
+
+.universalHeading {
+    font-size: 3rem;
+}
+
+.stroke {
+    color: transparent;
+    -webkit-text-stroke-color: var(--secondary);
+    -webkit-text-stroke-width: 1.5px;
+}
+
+/* Header Styling */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+    height: 45px;
+    color: var(--primary);
+    background-color: var(--secondary);
+    font-family: Manrope;
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+.headerSec1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 1rem;
+}
+
+.headerSec1 a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.headerSec1 p {
+    transition: all .5s ease;
+}
+
+.headerSec1 p:hover {
+    transform: translateY(-3px);
+}
+
+.headerSec2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.hiddenHeaderIcon {
+    display: none;
+}
+
+header i {
+    color: var(--primary);
+    transition: all .5s ease;
+}
+
+header a i:hover {
+    transform: translateY(-3px);
+}
+
+/* Nav Styling */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 50px;
+    z-index: 1000;
+    width: 100%;
+    color: var(--text);
+    height: 50px;
+    top: 0;
+    position: sticky;
+    backdrop-filter: blur(2px);
+}
+
+.logo {
+    font-family: Raleway;
+    font-size: 1.4rem;
+}
+
+.logo h1 span {
+    color: var(--secondary);
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.2rem;
+    font-family: "Raleway";
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.nav-link a {
+    text-decoration: none;
+    color: var(--text);
+    transition: all .4s ease;
+}
+
+.nav-link a:hover {
+    color: var(--secondary);
+}
+
+/* Hamburger Menu Styling */
+
+.icon-menu {
+    --gap: 5px;
+    --height-bar: 2.5px;
+    --pos-y-bar-one: 0;
+    --pos-y-bar-three: 0;
+    --scale-bar: 1;
+    --rotate-bar-one: 0;
+    --rotate-bar-three: 0;
+    width: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    cursor: pointer;
+    position: relative;
+    display: none;
+}
+
+.bar {
+    position: relative;
+    height: var(--height-bar);
+    width: 100%;
+    border-radius: .5rem;
+    background-color: var(--secondary);
+}
+
+.bar--1 {
+    top: var(--pos-y-bar-one);
+    transform: rotate(var(--rotate-bar-one));
+    transition: top 200ms 100ms, transform 100ms;
+}
+
+.bar--2 {
+    transform: scaleX(var(--scale-bar));
+    transition: transform 150ms 100ms;
+}
+
+.bar--3 {
+    bottom: var(--pos-y-bar-three);
+    transform: rotate(var(--rotate-bar-three));
+    transition: bottom 200ms 100ms, transform 100ms;
+}
+
+.check-icon:checked+.icon-menu>.bar--1 {
+    transition: top 200ms, transform 200ms 100ms;
+}
+
+.check-icon:checked+.icon-menu>.bar--3 {
+    transition: bottom 200ms, transform 200ms 100ms;
+}
+
+.check-icon:checked+.icon-menu {
+    --pos-y-bar-one: calc(var(--gap) + var(--height-bar));
+    --pos-y-bar-three: calc(var(--gap) + var(--height-bar));
+    --scale-bar: 0;
+    --rotate-bar-one: 45deg;
+    --rotate-bar-three: -45deg;
+}
+
+/* Scrollbar Styling */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--secondary);
+}
+
+/* Main Styling */
+
+.mainSec {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+    margin: 100px 0;
+    font-family: Raleway;
+    color: var(--text);
+}
+
+.intro .name {
+    font-size: 3rem;
+}
+
+.intro p {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-family: Raleway;
+    width: 340px;
+    text-align: justify;
+}
+
+.img img {
+    border-radius: 50%;
+    border: 7px solid var(--secondary);
+    box-shadow: 0px 0px 55px var(--secondary);
+}
+
+.btn {
+    font-family: Raleway;
+    padding: 10px;
+    font-weight: bold;
+    color: var(--primary);
+    border-radius: 3px;
+    border: 2px solid var(--secondary);
+    background-color: var(--secondary);
+    transition: all .4s ease;
+    text-decoration: none;
+}
+
+.btn:hover {
+    border: 2px solid var(--text);
+    background-color: transparent;
+    color: var(--text);
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+/* About Me Styling */
+
+.aboutSec {
+    font-family: Raleway;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 130px 0 0 0;
+    padding: 30px 0;
+    background-color: #dddddd40;
+}
+
+.aboutInner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutP {
+    text-align: justify;
+    width: 80%;
+    margin: 30px;
+}
+
+.getInTouch {
+    font-family: Raleway;
+    padding: 10px;
+    font-weight: bold;
+    color: var(--primary);
+    border-radius: 3px;
+    border: 2px solid var(--secondary);
+    background-color: var(--secondary);
+    transition: all .4s ease;
+    text-decoration: none;
+}
+
+.getInTouch:hover {
+    border: 2px solid var(--text);
+    background-color: transparent;
+    color: var(--text);
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+/* Services Styling */
+
+.servicesSec {
+    font-family: Raleway;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0 0 0;
+    padding: 30px 0;
+}
+
+.servicesInner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    font-family: Montserrat;
+    margin-top: 30px;
+    width: 90%;
+}
+
+.servicesInner ul li {
+    display: flex;
+    gap: 5px;
+    align-items:end;
+    margin-bottom: 10px;
+}
+
+.servicesUl {
+    list-style-type: none;
+    background-color: #ddd;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.ulH1 {
+    background-color: var(--secondary);
+    color: var(--primary);
+    padding: 10px;
+    font-size: 1.5rem;
+}
+
+/* Contact Styling */
+
+.contactSec {
+    font-family: Raleway;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0 0 0;
+    padding: 30px 0;
+    background-color: #dddddd40;
+}
+
+.contact-form-container {
+    width: 450px;
+    font-family: Raleway;
+    margin: 30px 0 30px 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.form-group .name {
+    width: 49.5%;
+    padding: 10px 10px 5px 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #00000080;
+    outline: none;
+    font-family: Raleway;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 10px 10px 5px 5px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #00000080;
+    border-radius: 2px;
+    box-sizing: border-box;
+    font-family: Raleway;
+    outline: none;
+    background-color: #fff;
+}
+
+.form-group select:focus {
+    border-bottom: 2px solid var(--secondary);
+}
+
+.form-group textarea {
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    border: 2px solid #00000080;
+    border-radius: 2px;
+    box-sizing: border-box;
+    font-family: Raleway;
+    outline: none;
+    resize: vertical;
+}
+
+.form-group textarea:focus {
+    border: 2px solid var(--secondary);
+}
+
+.form-group input[type="file"]::-webkit-file-upload-button {
+    font-family: Raleway;
+}
+
+.form-group input[type="email"],
+.form-group input[type="url"]{
+    width: 100%;
+    padding: 10px 10px 5px 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    font-family: Raleway;
+    border: none;
+    border-bottom: 2px solid #00000080;
+    outline: none;
+}
+
+#urlInput {
+    display: none;
+}
+
+.form-group input[type="email"]:focus,
+.form-group input[type="url"]:focus,
+.form-group .name:focus {
+    border-bottom: 2px solid var(--secondary);
+}
+
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    font-family: Raleway;
+    border: 2px solid #00000080;
+    outline: none;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: var(--secondary);
+    color: #fff;
+    padding: 10px 15px;
+    font-family: Raleway;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border: 2px solid var(--secondary);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.submit-btn:hover {
+    border: 2px solid var(--text);
+    background-color: transparent;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.reset {
+    text-align: center;
+    cursor: pointer;
+    transition: all .4s ease;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.reset:hover {
+    color: var(--secondary);
+}
